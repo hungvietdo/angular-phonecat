@@ -1,0 +1,33 @@
+<md-content>
+      <p>
+        Search:
+        <input ng-model="$ctrl.query" />
+      </p>
+      <p>
+        Sort by:
+        <select ng-model="$ctrl.orderProp">
+          <option value="homepage">A-Z</option>
+          <option value="-homepage">Z-A</option>
+        </select>
+      </p>
+
+      <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Homepage</th>
+              <th scope="col">Username</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="user in $ctrl.users | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+              <th scope="row">1</th>
+              <td><a href = "{{user.homepage}}"> {{user.homepage}}</a></td>
+              <td>{{user.username}}</td>
+              <td><md-button class="md-raised md-primary">Pull Tweet</md-button></td>
+            </tr>
+          </tbody>
+        </table>
+  </md-content>
+

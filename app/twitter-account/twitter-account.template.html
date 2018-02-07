@@ -1,0 +1,68 @@
+<!-- <md-content>
+      <p>
+        Search:
+        <input ng-model="$ctrl.query" />
+      </p>
+      <p>
+        Sort by:
+        <select ng-model="$ctrl.orderProp">
+          <option value="homepage">A-Z</option>
+          <option value="-homepage">Z-A</option>
+        </select>
+      </p>
+
+      <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Homepage</th>
+              <th scope="col">Username</th>
+              <th scope="col">Account Info</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="user in $ctrl.users | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+              <th scope="row">{{$index + 1}}</th>
+              <td><a href = "{{user.homepage}}"> {{user.homepage}}</a></td>
+              <td>{{user.username}}</td>
+              <td><md-button class="md-raised md-disabled" ng-href="twitter-account/{{user.username}}">See Account Info</md-button></td>
+              <td><md-button class="md-raised md-primary">Pull Tweet</md-button></td>
+            </tr>
+          </tbody>
+        </table>
+  </md-content> -->
+
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2">
+          <!--Sidebar content-->
+    
+          <p>
+            Search:
+            <input ng-model="$ctrl.query" />
+          </p>
+    
+          <p>
+            Sort by:
+            <select ng-model="$ctrl.orderProp">
+              <option value="name">Alphabetical</option>
+              <option value="age">Newest</option>
+            </select>
+          </p>
+    
+        </div>
+        <div class="col-md-10">
+          <!--Body content-->
+    
+          <ul class="phones">
+            <li ng-repeat="user in $ctrl.users | filter:$ctrl.query | orderBy:$ctrl.orderProp" class="thumbnail">
+            
+              <p>{{user.homepage}}</p>
+            </li>
+          </ul>
+    
+        </div>
+      </div>
+    </div>
+    
